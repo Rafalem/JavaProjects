@@ -1,0 +1,110 @@
+.cover {
+    background:#FFF;
+    width:500px;
+    margin:auto; 
+    padding-left:0px;
+}
+ 
+h2.contact { 
+    padding-left: 0px;
+    font-size: 40px;
+    color: #01A9DC;
+    height: 40px;
+    background: url(images/contact.png) no-repeat -10px -10px;  
+    font-family: sans-serif;
+    text-align: center;
+}
+ 
+p.contact { 
+    font-size: 24px; 
+    margin-bottom: 15px; 
+    line-height: 36px; 
+    font-family: 'Open Sans', sans-serif;
+    color: #01A9DC;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); 
+}
+ 
+.cover #contact {
+    margin-bottom: 0px; 
+}
+ 
+.cover input[type="text"] {
+    width: 500px;
+}
+.cover input[type="submit"] {
+     width: 530px;
+}
+.cover textarea {
+    width: 500px;
+    height: 275px; 
+}
+ 
+.cover label {
+    color: #01A9DC;
+}
+
+.cover input, textarea {
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 5px solid rgba(0, 100, 200, 0.15);
+    padding: 10px; 
+    font-family: 'Open Sans', sans-serif;
+    color: #4b4b4b;
+    font-size: 24px; 
+    -webkit-border-radius: 5px;
+    margin-bottom: 15px;
+    margin-top: -10px;
+}
+ 
+.cover input:focus, textarea:focus {
+    border: 5px solid #01A9DC;
+    background-color: rgba(255, 255, 255, 1);
+}
+.cover input[type="submit"] {
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 24px;
+    background-color: #01A9DC;
+    padding: 5px 36px 8px 36px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    background: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.23, #01A9DC),
+        color-stop(0.62, #01A9DC)
+    );
+    background: -moz-linear-gradient(
+        center bottom,
+        #01A9DC 23%,
+        #01A9DC 62%
+    );
+}
+
+.cover input[type="submit"]:hover {
+    color: #fff; 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4); 
+    background-color: #01A9DC;
+    background: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.23, #0040c3),
+        color-stop(0.62, #0054ff)
+    );
+    background: -moz-linear-gradient(
+        center bottom,
+        #18ACD9 23%,
+        #18ACD9 62%
+    );
+}
+ 
+.cover input[type="submit"]:active {
+    top: 1px;
+    background: #0091BD;
+}

@@ -1,0 +1,76 @@
+<html t:type="layout"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+
+<t:zone t:id="searchZone">
+    <form t:id="searchForm" class="form-wrapper">
+        <t:textfield t:id="searchString" placeholder="..."/>
+         <input name="submit" id="submit" tabindex="1" value="Найти" type="submit"/>
+    </form>
+</t:zone>
+
+<t:zone t:id="animalZone" visible="false">
+
+    <t:grid t:id="animalGrid" source="Animals" row="Animal" class="simple-little-table"
+            exclude="id">
+        <p:nameHeader>
+            ${message:name}
+        </p:nameHeader>
+        <p:kindHeader>
+            Вид
+        </p:kindHeader>
+        <p:comingDateHeader>
+            Дата поступления
+        </p:comingDateHeader>
+
+        <p:NameCell>
+            <t:pagelink t:page="Photo">${animal.name}</t:pagelink>
+            <!--<t:pagelink t:page="Photo" t:context="animal.id">${animal.name}</t:pagelink>-->
+        </p:NameCell>
+
+        <p:empty>
+            <p>
+
+            <h2>
+                В базе нет животных, хотите
+                <t:pagelink page="Edit">добавить</t:pagelink>
+                ?
+            </h2>
+            </p>
+        </p:empty>
+    </t:grid>
+</t:zone>
+
+<t:zone t:id="searchResults" visible="true">
+
+    <t:grid t:id="searchGrid" source="findAnimals" row="Animal" class="simple-little-table"
+            exclude="id">
+        <p:nameHeader>
+            ${message:name}
+        </p:nameHeader>
+        <p:kindHeader>
+            Вид
+        </p:kindHeader>
+        <p:comingDateHeader>
+            Дата поступления
+        </p:comingDateHeader>
+
+        <p:NameCell>
+            <t:pagelink t:page="Photo">${animal.name}</t:pagelink>
+            <!--<t:pagelink t:page="Photo" t:context="animal.id">${animal.name}</t:pagelink>-->
+        </p:NameCell>
+
+        <p:empty>
+            <p>
+
+            <h2>
+                Поиск не дал результатов, хотите
+                <t:pagelink page="search">повторить</t:pagelink>
+                ?
+            </h2>
+            </p>
+        </p:empty>
+    </t:grid>
+</t:zone>
+
+</html>

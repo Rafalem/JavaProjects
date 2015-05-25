@@ -1,0 +1,29 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+
+<div id="portfolio">
+    <div class="title">
+        <h2>Наши животные</h2>
+    </div>
+    <ul>
+        <li class="current_item">
+            <img src="images/pic01.jpg" class="image image-full" alt=""/>
+        </li>
+        <li class="current_item">
+            <img src="images/pic02.jpg" class="image image-full" alt=""/>
+        </li>
+        <li class="current_item">
+            <img src="images/pic03.jpg" class="image image-full" alt=""/>
+        </li>
+        <li class="current_item">
+            <img src="images/pic04.jpg" class="image image-full" alt=""/>
+        </li>
+        <li class="current_item">
+            <img src="images/pic05.jpg" class="image image-full" alt=""/>
+        </li>
+        <li class="current_item">
+            <img src="images/pic06.jpg" class="image image-full" alt=""/>
+        </li>
+    </ul>
+</div>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>WebZoo</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Open+Sans+Condensed:300,700"
+          rel="stylesheet"/>
+    <link href="layout/layout.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="layout/fonts.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="layout/tables.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="layout/search.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="layout/editform.css" rel="stylesheet" type="text/css" media="all"/>
+
+</head>
+<body>
+<div id="logo" class="container">
+    <h1><span class="icon icon-leaf icon-size"></span>Web<span>Zoo</span></h1>
+</div>
+<div id="wrapper" class="container">
+    <div id="menu" class="container">
+        <ul>
+            <li t:type="loop" source="pageNames" value="pageName"
+                class="prop:classForPageName">
+                <t:pagelink page="prop:pageName">
+                    ${prop:pageNameLocalized}
+                </t:pagelink>
+            </li>
+        </ul>
+    </div>
+
+    <t:body/>
+
+</div>
+
+
+<div id="copyright">
+    <p>&copy; NSU. All rights reserved. | Photos by
+        <a href="http://google.com/">google</a> | Design by
+        <a href="#" rel="nofollow">Toropov Maxim</a>.</p>
+</div>
+</body>
+</html>

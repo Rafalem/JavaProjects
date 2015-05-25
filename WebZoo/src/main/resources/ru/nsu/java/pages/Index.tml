@@ -1,0 +1,155 @@
+<html t:type="layout"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+
+<t:zone t:id="animalZone">
+
+    <div id="three-column" class="container">
+        <div id="tbox1">
+            <a href="#">
+                <img src="images/m.jpg" alt="" class="image-round"/>
+            </a>
+
+            <div class="title">
+                <h2>Млекопитающие</h2>
+            </div>
+            <p>Млекопита́ющие (лат. Mammalia) — класс позвоночных животных, основной отличительной особенностью которых
+                является вскармливание детёнышей молоком. По оценкам биологов, известно до 5500 современных видов
+                млекопитающих. На территории России (2002) обитает примерно 380 видов.</p>
+
+            <t:actionlink t:id="animals" zone="animalZone" class="button">Посмотреть</t:actionlink>
+
+        </div>
+
+        <div id="tbox2">
+            <a href="#">
+                <img src="images/p.jpg" alt="" class="image-round"/>
+            </a>
+
+            <div class="title">
+                <h2>Птицы</h2>
+            </div>
+            <p>Пти́цы (лат. Aves) — клаcс теплокровных яйцекладущих позвоночных животных. Представляют собой
+                обособленную группу, одним из наиболее характерных признаков представителей которой является покров из
+                перьев, предохраняющий тело от неблагоприятных изменений температуры и играющий важную роль при
+                полёте.</p>
+
+            <t:actionlink t:id="birds" zone="animalZone" class="button">Посмотреть</t:actionlink>
+
+        </div>
+
+        <div id="tbox3">
+            <a href="#">
+                <img src="images/h.jpg" alt="" class="image-round"/>
+            </a>
+
+            <div class="title">
+                <h2>Хищники</h2>
+            </div>
+            <p>Хищничество — трофические отношения между организмами, при которых один из них (хищник) атакует другого
+                (жертву) и питается его плотью. В процессе совместной эволюции хищники и жертвы приспосабливаются друг к
+                другу, таким образом достигается динамическое равновесие в системе «хищник-жертва».</p>
+
+            <t:actionlink t:id="predators" zone="animalZone" class="button">Посмотреть</t:actionlink>
+        </div>
+    </div>
+
+</t:zone>
+
+
+<t:zone t:id="table1" visible="false">
+
+    <t:grid t:id="theGrid1" source="Animals" row="Animal" class="simple-little-table"
+            exclude="id">
+        <p:nameHeader>
+            ${message:name}
+        </p:nameHeader>
+        <p:kindHeader>
+            Вид
+        </p:kindHeader>
+        <p:comingDateHeader>
+            Дата поступления
+        </p:comingDateHeader>
+
+        <p:NameCell>
+            <t:pagelink t:page="Photo">${animal.name}</t:pagelink>
+            <!--<t:pagelink t:page="Photo" t:context="animal.id">${animal.name}</t:pagelink>-->
+        </p:NameCell>
+
+        <p:empty>
+            <p>
+
+            <h2>
+                В базе нет животных, относящихся к выбранной группе, хотите
+                <t:pagelink page="Edit">добавить</t:pagelink>
+                ?
+            </h2>
+            </p>
+        </p:empty>
+    </t:grid>
+</t:zone>
+
+<t:zone t:id="table2" visible="false">
+    <t:grid t:id="theGrid2" source="Birds" row="Animal" class="simple-little-table"
+            exclude="id">
+        <p:nameHeader>
+            ${message:name}
+        </p:nameHeader>
+        <p:kindHeader>
+            Вид
+        </p:kindHeader>
+        <p:comingDateHeader>
+            Дата поступления
+        </p:comingDateHeader>
+
+        <p:NameCell>
+            <t:pagelink t:page="Photo">${animal.name}</t:pagelink>
+            <!--<t:pagelink t:page="Photo" t:context="animal.id">${animal.name}</t:pagelink>-->
+        </p:NameCell>
+
+        <p:empty>
+            <p>
+
+            <h2>
+                В базе нет животных, относящихся к выбранной группе, хотите
+                <t:pagelink page="Edit">добавить</t:pagelink>
+                ?
+            </h2>
+            </p>
+        </p:empty>
+    </t:grid>
+</t:zone>
+
+<t:zone t:id="table3" visible="false">
+    <t:grid t:id="theGrid3" source="Predators" row="Animal" class="simple-little-table"
+            exclude="id">
+        <p:nameHeader>
+            ${message:name}
+        </p:nameHeader>
+        <p:kindHeader>
+            Вид
+        </p:kindHeader>
+        <p:comingDateHeader>
+            Дата поступления
+        </p:comingDateHeader>
+
+        <p:NameCell>
+            <t:pagelink t:page="Photo">${animal.name}</t:pagelink>
+            <!--<t:pagelink t:page="Photo" t:context="animal.id">${animal.name}</t:pagelink>-->
+        </p:NameCell>
+
+        <p:empty>
+            <p>
+
+            <h2>
+                В базе нет животных, относящихся к выбранной группе, хотите
+                <t:pagelink page="Edit">добавить</t:pagelink>
+                ?
+            </h2>
+            </p>
+        </p:empty>
+    </t:grid>
+</t:zone>
+
+
+</html>

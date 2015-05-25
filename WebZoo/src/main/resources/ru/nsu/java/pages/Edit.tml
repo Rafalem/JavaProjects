@@ -1,0 +1,91 @@
+<html t:type="layout"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+
+<t:zone t:id="editZone">
+    <div class="cover" style="float: left; width: 43%; padding-left: 40px;">
+        <h2 class="contact"><span>Добавление</span></h2>
+
+        <form t:id="addForm">
+            <p class="contact"><label for="name">Имя</label></p>
+            <t:textfield id="name" t:id="addName" placeholder="..."/>
+
+            <p class="contact"><label for="kind">Вид</label></p>
+            <t:textfield id="kind" t:id="addKind" placeholder="..."/>
+
+            <p class="contact"><label for="date">Дата</label></p>
+            <t:textfield id="date" t:id="addDate" placeholder="31.12.1999"/>
+
+            <br/>
+
+            <input name="submit" id="submit" tabindex="1" value="Добавить" type="submit" class="button" zone="animalZone"/>
+            <br/>
+        </form>
+    </div>
+
+    <div class="cover" style="float: right; width: 43%;padding-right: 50px;">
+        <h2 class="contact"><span>Изменение</span></h2>
+
+        <form t:id="editForm">
+            <p class="contact"><label for="ename">Имя</label></p>
+            <t:textfield id="ename" t:id="editName"/>
+
+            <p class="contact"><label for="ekind">Вид</label></p>
+            <t:textfield id="ekind" t:id="editKind"/>
+
+            <p class="contact"><label for="edate">Дата</label></p>
+            <t:textfield id="edate" t:id="editDate"/>
+
+            <br/>
+
+            <input name="esubmit" id="esubmit" tabindex="1" value="Изменить" type="submit" class="button" zone="animalZone"/>
+            <br/>
+        </form>
+    </div>
+</t:zone>
+
+<t:zone t:id="animalZone" visible="true">
+
+    <t:grid t:id="animalGrid" source="Animals" row="Animal" class="simple-little-table"
+            exclude="id" add="action">
+        <p:nameHeader>
+            ${message:name}
+        </p:nameHeader>
+        <p:actionHeader>
+            Действие
+        </p:actionHeader>
+        <p:kindHeader>
+            Вид
+        </p:kindHeader>
+        <p:comingDateHeader>
+            Дата поступления
+        </p:comingDateHeader>
+
+        <p:NameCell>
+            <t:pagelink t:page="Photo">${animal.name}</t:pagelink>
+            <!--<t:pagelink t:page="Photo" t:context="animal.id">${animal.name}</t:pagelink>-->
+        </p:NameCell>
+        <p:actionCell>
+            <!-- <t:eventLink t:event="Delete" context="Animal.Id"
+                          t:mixins="Confirm"
+                          t:message="Удалить ${Animal.Name}?">Удалить
+             </t:eventLink>-->
+            <t:actionlink t:id="delete" context="Animal.id">Удалить</t:actionlink>
+            &nbsp; &nbsp;
+            <t:actionlink t:id="edit"
+                          context="[Animal.id, Animal.name, Animal.kind, Animal.comingDate]">
+                Изменить
+            </t:actionlink>
+        </p:actionCell>
+
+        <p:empty>
+            <p>
+
+            <h2>
+                В базе нет животных.
+            </h2>
+            </p>
+        </p:empty>
+    </t:grid>
+</t:zone>
+</html>

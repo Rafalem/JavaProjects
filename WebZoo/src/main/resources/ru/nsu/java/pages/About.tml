@@ -1,0 +1,17 @@
+<html t:type="layout"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+
+<t:zone t:id="aboutZone">
+    <div class="cover">
+        <h2>
+            <p>Автор сайта: Торопов М.Е.</p>
+            <p>Сайт разработан в образовательных целях для спецкурса "Системы БД"</p>
+            <p>Для связи сайта с кодом на языке Java используется Tapestry Framework</p>
+            <p>База данных - MySQL | логирование - log4j | тестирование - junit, cobertura</p>
+            <p>Сборка проекта осуществляется с помощью Maven</p>
+            <p>Дата создания: 25.05.2015</p>
+        </h2>
+    </div>
+</t:zone>
+</html>
